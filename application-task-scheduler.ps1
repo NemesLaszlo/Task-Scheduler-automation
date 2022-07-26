@@ -8,7 +8,7 @@ $TaskName = $(TaskName)
 $Description = $(Description)
 $DockerImage = $(DockerImage) 
 
-# New scheduled task to run docker elements
+# New scheduled task to run docker application
 # For example in dotnet application configuration file is the appsettings.json
 $Action = New-ScheduledTaskAction -Execute 'docker' -Argument "run -p 80:80 --mount type=bind,source=$pwd\[configuration_file],target=\app\[configuration_file] $DockerImage"
 
